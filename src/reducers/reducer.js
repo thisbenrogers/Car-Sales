@@ -20,7 +20,7 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case BUY_ITEM:
-            console.log("action.payload in reducer: ", action.payload);
+            console.log("action.payload in BUY_ITEM reducer: ", action.payload);
             return {
                 ...state,
                 car: {
@@ -32,14 +32,12 @@ export const reducer = (state = initialState, action) => {
                 }
             };
         case REM_FEAT:
-            console.log("action.payload in reducer: ", action.payload);
+            console.log("action.payload in REM_FEAT reducer: ", action.payload);
             return {
                 ...state,
                 car: {
                     ...state.car,
-                    features: [
-                        state.car.features.filter(feat => action.payload.id !== feat.id)
-                    ]
+                    features: state.car.features.filter(feat => feat.id !== action.payload.id)
                 }
             }
         default:
