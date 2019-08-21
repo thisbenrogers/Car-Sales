@@ -13,8 +13,6 @@ import './styles.scss';
 
 const store = createStore(reducer);
 
-console.log("store in index.js", store);
-
 const rootElement = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
